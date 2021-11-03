@@ -76,3 +76,14 @@ WHERE (title LIKE "% %" AND title NOT LIKE "_")
         AND
         author LIKE "% %%С.%"
 ORDER BY title ASC
+
+-- 1.3.2 Выбор уникальных элементов DISTINCT
+SELECT DISTINCT amount
+FROM book
+
+-- 1.3.3 Групповые функции SUM COUNT
+SELECT author AS "Автор", COUNT(title) AS "Различных_книг", SUM(amount) AS "Количество_экземпляров"
+FROM book
+GROUP BY author
+
+-- 1.3.4. Групповые функции MIN MAX AVG
